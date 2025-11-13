@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dev-cheatsheet - Linux Bash</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+<header class="container-fluid">
+    <a href="/">dev-cheatsheet</a>
+</header>
+    <div class="container">
+        <h1>Linux Commands Cheat Sheet</h1>
+        <div class="py-3">Quick reference extracted and organized into categories. Copy, tweak, and extend as
+            needed.</div>
+
+        <div class="row row-cols-1 row-cols-lg-2">
+            <!-- File Commands -->
+            <div class="col">
+                <h2>File Commands</h2>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Command</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td class="command">ls</td>
+                        <td class="desc">List the content of the current directory</td>
+                    </tr>
+                    <tr>
+                        <td class="command">ls -R</td>
+                        <td class="desc">List subdirectories recursively</td>
+                    </tr>
+                    <tr>
+                        <td class="command">ls -a</td>
+                        <td class="desc">List all content, including hidden files</td>
+                    </tr>
+                    <tr>
+                        <td class="command">ls -l</td>
+                        <td class="desc">List content with detailed information</td>
+                    </tr>
+                    <tr>
+                        <td class="command">pwd</td>
+                        <td class="desc">Show the current directory</td>
+                    </tr>
+                    <tr>
+                        <td class="command">cd folder1</td>
+                        <td class="desc">Change directory to <code>folder1</code></td>
+                    </tr>
+                    <tr>
+                        <td class="command">cd</td>
+                        <td class="desc">Return to <code>$HOME</code> directory</td>
+                    </tr>
+                    <tr>
+                        <td class="command">cd ..</td>
+                        <td class="desc">Go up one directory</td>
+                    </tr>
+                    <tr>
+                        <td class="command">cd -</td>
+                        <td class="desc">Return to the previous directory</td>
+                    </tr>
+                    <tr>
+                        <td class="command">cp source destination</td>
+                        <td class="desc">Copy file</td>
+                    </tr>
+                    <tr>
+                        <td class="command">cp -r source destination</td>
+                        <td class="desc">Copy folder recursively</td>
+                    </tr>
+                    <tr>
+                        <td class="command">mv source destination</td>
+                        <td class="desc">Move or rename file</td>
+                    </tr>
+                    <tr>
+                        <td class="command">rm file1</td>
+                        <td class="desc">Remove file</td>
+                    </tr>
+                    <tr>
+                        <td class="command">rm -f file1</td>
+                        <td class="desc">Force remove file without prompt</td>
+                    </tr>
+                    <tr>
+                        <td class="command">rm -r folder</td>
+                        <td class="desc">Remove folder and its contents recursively</td>
+                    </tr>
+                    <tr>
+                        <td class="command">mkdir foldername</td>
+                        <td class="desc">Create a new folder</td>
+                    </tr>
+                    <tr>
+                        <td class="command">rmdir foldername</td>
+                        <td class="desc">Remove an empty folder</td>
+                    </tr>
+                    <tr>
+                        <td class="command">file file1</td>
+                        <td class="desc">Show file type</td>
+                    </tr>
+                    <tr>
+                        <td class="command">cat file1 file2</td>
+                        <td class="desc">Concatenate files</td>
+                    </tr>
+                    <tr>
+                        <td class="command">cat &gt; file1</td>
+                        <td class="desc">Write standard input to file</td>
+                    </tr>
+                    <tr>
+                        <td class="command">less file1</td>
+                        <td class="desc">View file (paged)</td>
+                    </tr>
+                    <tr>
+                        <td class="command">head file1</td>
+                        <td class="desc">Show first 10 lines</td>
+                    </tr>
+                    <tr>
+                        <td class="command">tail file1</td>
+                        <td class="desc">Show last 10 lines</td>
+                    </tr>
+                    <tr>
+                        <td class="command">chmod 777 file</td>
+                        <td class="desc">Change file permission</td>
+                    </tr>
+                    <tr>
+                        <td class="command">chown user:group file</td>
+                        <td class="desc">Change file ownership</td>
+                    </tr>
+                    <tr>
+                        <td class="command">ln -s source destination</td>
+                        <td class="desc">Create symbolic link</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- System Commands -->
+            <div class="col">
+                <h2>System Commands</h2>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Command</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td class="command">uname -a</td>
+                        <td class="desc">Show system and kernel info</td>
+                    </tr>
+                    <tr>
+                        <td class="command">head -n1 /etc/issue</td>
+                        <td class="desc">Show distribution information</td>
+                    </tr>
+                    <tr>
+                        <td class="command">mount</td>
+                        <td class="desc">Show mounted filesystems</td>
+                    </tr>
+                    <tr>
+                        <td class="command">date</td>
+                        <td class="desc">Show system date</td>
+                    </tr>
+                    <tr>
+                        <td class="command">uptime</td>
+                        <td class="desc">Show system uptime</td>
+                    </tr>
+                    <tr>
+                        <td class="command">whoami</td>
+                        <td class="desc">Show current username</td>
+                    </tr>
+                    <tr>
+                        <td class="command">w</td>
+                        <td class="desc">Show who is online</td>
+                    </tr>
+                    <tr>
+                        <td class="command">man command</td>
+                        <td class="desc">Show manual page</td>
+                    </tr>
+                    <tr>
+                        <td class="command">mount -o loop cdrom.iso /mnt/dir</td>
+                        <td class="desc">Mount ISO image</td>
+                    </tr>
+                    <tr>
+                        <td class="command">cat /proc/partitions</td>
+                        <td class="desc">Show registered partitions</td>
+                    </tr>
+                    <tr>
+                        <td class="command">grep MemTotal /proc/meminfo</td>
+                        <td class="desc">Show total RAM</td>
+                    </tr>
+                    <tr>
+                        <td class="command">grep "model name" /proc/cpuinfo</td>
+                        <td class="desc">Show CPU info</td>
+                    </tr>
+                    <tr>
+                        <td class="command">lspci -tv</td>
+                        <td class="desc">Show PCI devices</td>
+                    </tr>
+                    <tr>
+                        <td class="command">lsusb -tv</td>
+                        <td class="desc">Show USB devices</td>
+                    </tr>
+                    <tr>
+                        <td class="command">!!</td>
+                        <td class="desc">Repeat last command</td>
+                    </tr>
+                    <tr>
+                        <td class="command">exit</td>
+                        <td class="desc">Logout / exit shell</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- File Searching -->
+            <div class="col">
+                <h2>File Searching</h2>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Command</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td class="command">grep pattern files</td>
+                        <td class="desc">Search for pattern in files</td>
+                    </tr>
+                    <tr>
+                        <td class="command">grep -i</td>
+                        <td class="desc">Case-insensitive search</td>
+                    </tr>
+                    <tr>
+                        <td class="command">grep -r</td>
+                        <td class="desc">Recursive search</td>
+                    </tr>
+                    <tr>
+                        <td class="command">grep -v</td>
+                        <td class="desc">Invert match</td>
+                    </tr>
+                    <tr>
+                        <td class="command">grep -o</td>
+                        <td class="desc">Show only matched part</td>
+                    </tr>
+                    <tr>
+                        <td class="command">locate file1</td>
+                        <td class="desc">Find by name (database)</td>
+                    </tr>
+                    <tr>
+                        <td class="command">whereis command</td>
+                        <td class="desc">Locate binary/source/manual</td>
+                    </tr>
+                    <tr>
+                        <td class="command">which app</td>
+                        <td class="desc">Show path of command</td>
+                    </tr>
+                    <tr>
+                        <td class="command">look string file1</td>
+                        <td class="desc">Lines starting with string</td>
+                    </tr>
+                    <tr>
+                        <td class="command">find /dir/ -user name</td>
+                        <td class="desc">Find files owned by user</td>
+                    </tr>
+                    <tr>
+                        <td class="command">find /dir/ -mmin num</td>
+                        <td class="desc">Modified less than num minutes ago</td>
+                    </tr>
+                    <tr>
+                        <td class="command">find /dir/ -name 'name*'</td>
+                        <td class="desc">Names starting with value</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Encryption & Compression -->
+            <div class="col">
+                <h2>Encryption &amp; Compression</h2>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Command</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td class="command">gpg -c file</td>
+                        <td class="desc">Encrypt file (symmetric)</td>
+                    </tr>
+                    <tr>
+                        <td class="command">gpg file.gpg</td>
+                        <td class="desc">Decrypt file</td>
+                    </tr>
+                    <tr>
+                        <td class="command">tar -cf archive.tar foo bar</td>
+                        <td class="desc">Create tar archive</td>
+                    </tr>
+                    <tr>
+                        <td class="command">tar -xf archive.tar</td>
+                        <td class="desc">Extract tar archive</td>
+                    </tr>
+                    <tr>
+                        <td class="command">tar -czf archive.tar.gz foo bar</td>
+                        <td class="desc">Create gzip-compressed tar</td>
+                    </tr>
+                    <tr>
+                        <td class="command">tar -xzf archive.tar.gz</td>
+                        <td class="desc">Extract gzip-compressed tar</td>
+                    </tr>
+                    <tr>
+                        <td class="command">tar -cjf archive.tar.bz2 foo bar</td>
+                        <td class="desc">Create bzip2-compressed tar</td>
+                    </tr>
+                    <tr>
+                        <td class="command">tar -xjf archive.tar.bz2</td>
+                        <td class="desc">Extract bzip2-compressed tar</td>
+                    </tr>
+                    <tr>
+                        <td class="command">gzip file1</td>
+                        <td class="desc">Compress file (to .gz)</td>
+                    </tr>
+                    <tr>
+                        <td class="command">gzip -d file1.gz</td>
+                        <td class="desc">Decompress .gz file</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Process Management -->
+            <div class="col">
+                <h2>Process Management</h2>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Command</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td class="command">ps</td>
+                        <td class="desc">Snapshot of processes</td>
+                    </tr>
+                    <tr>
+                        <td class="command">top</td>
+                        <td class="desc">Interactive process viewer</td>
+                    </tr>
+                    <tr>
+                        <td class="command">kill pid</td>
+                        <td class="desc">Kill process by PID</td>
+                    </tr>
+                    <tr>
+                        <td class="command">pkill name</td>
+                        <td class="desc">Kill by process name</td>
+                    </tr>
+                    <tr>
+                        <td class="command">killall name</td>
+                        <td class="desc">Kill all with matching name</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Keyboard Shortcuts -->
+            <div class="col">
+                <h2>Keyboard Shortcuts</h2>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Shortcut</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td class="command">Ctrl + Shift + C</td>
+                        <td class="desc">Copy highlighted text (terminal)</td>
+                    </tr>
+                    <tr>
+                        <td class="command">Ctrl + Shift + V</td>
+                        <td class="desc">Paste copied text (terminal)</td>
+                    </tr>
+                    <tr>
+                        <td class="command">Ctrl + Z</td>
+                        <td class="desc">Suspend current process</td>
+                    </tr>
+                    <tr>
+                        <td class="command">Ctrl + C</td>
+                        <td class="desc">Interrupt/stop current command</td>
+                    </tr>
+                    <tr>
+                        <td class="command">Ctrl + R</td>
+                        <td class="desc">Search command history</td>
+                    </tr>
+                    <tr>
+                        <td class="command">Ctrl + U</td>
+                        <td class="desc">Delete from start of line</td>
+                    </tr>
+                    <tr>
+                        <td class="command">Ctrl + K</td>
+                        <td class="desc">Delete to end of line</td>
+                    </tr>
+                    <tr>
+                        <td class="command">Ctrl + A</td>
+                        <td class="desc">Move to start of line</td>
+                    </tr>
+                    <tr>
+                        <td class="command">Ctrl + E</td>
+                        <td class="desc">Move to end of line</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- SSH -->
+            <div class="col">
+                <h2>SSH &amp; SCP</h2>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Command</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td class="command">ssh $USER@$HOST</td>
+                        <td class="desc">Connect to remote host</td>
+                    </tr>
+                    <tr>
+                        <td class="command">ssh $USER@$HOST command</td>
+                        <td class="desc">Run remote command</td>
+                    </tr>
+                    <tr>
+                        <td class="command">ssh $USER@$HOST -p 1234</td>
+                        <td class="desc">Connect on specific port</td>
+                    </tr>
+                    <tr>
+                        <td class="command">scp file1 $USER@$HOST:file1</td>
+                        <td class="desc">Copy file to remote host</td>
+                    </tr>
+                    <tr>
+                        <td class="command">scp $USER@$HOST:file1 file1</td>
+                        <td class="desc">Copy file from remote host</td>
+                    </tr>
+                    <tr>
+                        <td class="command">scp -r foo $USER@$HOST:/bar</td>
+                        <td class="desc">Copy directory to remote host</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Disk Space -->
+            <div class="col">
+                <h2>Disk &amp; Usage</h2>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Command</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td class="command">df -h</td>
+                        <td class="desc">Show free space (human readable)</td>
+                    </tr>
+                    <tr>
+                        <td class="command">df -i</td>
+                        <td class="desc">Show free inodes</td>
+                    </tr>
+                    <tr>
+                        <td class="command">du -h folder</td>
+                        <td class="desc">Usage of each item in folder</td>
+                    </tr>
+                    <tr>
+                        <td class="command">du -sh folder</td>
+                        <td class="desc">Total size of folder</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Packages & Info -->
+            <div class="col">
+                <h2>Packages &amp; System Info</h2>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Command</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td class="command">dpkg -i package.deb</td>
+                        <td class="desc">Install Debian package</td>
+                    </tr>
+                    <tr>
+                        <td class="command">rpm -Uvh package.rpm</td>
+                        <td class="desc">Install RPM package</td>
+                    </tr>
+                    <tr>
+                        <td class="command">fdisk -l</td>
+                        <td class="desc">List disks/partitions</td>
+                    </tr>
+                    <tr>
+                        <td class="command">free</td>
+                        <td class="desc">Show memory and swap usage</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            Tip: not all distributions behave identically; double-check options if something looks off.
+        </div>
+    </div>
+</body>
+
+</html>
