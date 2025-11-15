@@ -1,82 +1,83 @@
 # dev-cheatsheet
 
-A growing collection of **cheat sheets** for my course, written in plain **HTML** with **Bootstrap** and published via **GitHub Pages**.
-
-The content covers different topics (Linux Bash, SQL, and more later), but all are presented as small web pages so I can browse them easily.
+I built this project to turn my programming notes into something visual, organized, and easy to browse.  
+Instead of digging through text files or PDFs, I can quickly review topics directly through a clean, web-based interface.  
+It’s both a personal learning tool and a small React practice project.
 
 ---
 
 ## 🎯 Purpose
 
 - Organise my programming course notes as clean, scannable cheat sheets.
-- Practice using **Git**, **GitHub**, and **GitHub Pages**.
+- Practice using **Git**, , **GitHub**, and **GitHub Pages**.
 - Keep everything in one place: Bash, SQL, and future topics.
 
 ---
 
+## ✨ Features
+
+- 📱 **Mobile-friendly:** Fully responsive design that works smoothly on smartphones, tablets, and desktops.  
+- 🎨 **Modern UI:** Clean layout built with React and Bootstrap for a professional, consistent look.  
+- 🧭 **Easy navigation:** Simple structure that makes browsing cheat sheets quick and intuitive.  
+
+--- 
+
 ## 🧱 Tech Stack
 
-- **HTML5**
-- **Bootstrap 5** (via CDN)
-- Optional: small custom CSS
-
-No build tools or frameworks. Just static files that GitHub Pages can serve.
-
----
-
-## 📁 Structure
-
-Planned structure:
-
-```text
-.
-├── index.html                 # Overview page with links to all cheat sheets
-├── css/
-│   └── styles.css             # Optional custom styles
-├── cheatsheets/
-│   ├── bash-commands.html     # Linux / Bash commands cheat sheet
-│   ├── sql-basics.html        # SQL basics cheat sheet
-│   └── ...more later          # e.g. git.html, http.html, js-basics.html, etc.
-└── README.md
-```
-
-Each topic gets its own HTML file inside `cheatsheets/`.
+- **React** (Vite)
+- **Bootstrap 5**
+- **CSS / SCSS** (for small visual adjustments)
+- **GitHub Pages** for hosting
 
 ---
 
 ## 🚀 How to View
 
-1. **Locally**
+### 🌐 Online 
+
+The online version will be available soon, hosted via GitHub Pages.
+For now, the project can only be viewed locally using the steps bellow.
+Once the deployment is complete, a public link will be added here.
+
+### 🖥️ Local
+
+1. **Clone the repo**
 
    ```bash
    git clone https://github.com/miguelcosta/dev-cheatsheet.git
    cd dev-cheatsheet
    ```
 
-   Then either:
+2. **Install dependencies**
 
-   - Open `index.html` directly in your browser, or  
-   - Run a small local server:
+    ```bash
+    npm install
+    ```
 
-     ```bash
-     python -m http.server 8000
-     ```
+3. **Run locally**
 
-2. **GitHub Pages**
+    ```bash
+    npm run dev
 
-   Once GitHub Pages is enabled for this repo, you can browse all cheat sheets online.
+    ```
+    Open the local URL printed in your terminal.
 
 ---
 
-## 📝 Cheat Sheet Pages
+## 📘 Topics Covered
 
-Each cheat sheet is a single HTML file using Bootstrap.
+Cheat sheets currently included or planned:
+
+- Bash Commands
+- SQL Basics (comming soon)
+- More coming soon (Git, JavaScript, etc.)
+
+Each page focuses on key commands, syntax, and examples for quick reference.
 
 ---
 
 ## 🔮 Future Ideas
 
-- Add a navigation bar across all pages.
 - Add categories like: **Bash**, **SQL**, **Git**, **Networking**, **JavaScript**, etc.
 - Add a simple search or filter on the index page.
 
