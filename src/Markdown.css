@@ -1,0 +1,11 @@
+.markdown h1,h2,h3 {
+    padding-bottom: 1rem;
+
+}
+
+.markdown pre{
+    color: #212529;
+    padding: 5px 10px 5px;
+    background-color: #e9ecf0 ;
+    border-radius: 5px;
+}

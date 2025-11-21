@@ -28,6 +28,8 @@ It’s both a personal learning tool and a small React practice project.
 - **Bootstrap 5**
 - **CSS / SCSS** (for small visual adjustments)
 - **GitHub Pages** for hosting
+- [**react-markdown**](https://github.com/remarkjs/react-markdown?tab=readme-ov-file#allowelement)
+- [**remark-gfm**](https://github.com/remarkjs/remark-gfm?tab=readme-ov-file)
 
 ---
 

@@ -5,6 +5,7 @@ import './index.css'
 import App from './App.jsx';
 import Linuxbash from './cheatsheets/linuxbash';
 import Home from './home.jsx';
+import MdCheatSheet from './mdcheatsheet.jsx';
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,8 @@ const router = createBrowserRouter([
     element:<App />,
     children:[
       {index: true, element:<Home/>},
-      {path: "linuxbash", element:<Linuxbash />}
+      {path: "linuxbash", element:<Linuxbash />},
+      {path: "mdcheatsheet/:name", element:<MdCheatSheet />},
     ]
   }
 ])
