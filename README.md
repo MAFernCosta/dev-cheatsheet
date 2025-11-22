@@ -37,9 +37,7 @@ It’s both a personal learning tool and a small React practice project.
 
 ### 🌐 Online 
 
-The online version will be available soon, hosted via GitHub Pages.
-For now, the project can only be viewed locally using the steps bellow.
-Once the deployment is complete, a public link will be added here.
+Just open [dev-cheatsheet](https://maferncosta.github.io/dev-cheatsheet) !!
 
 ### 🖥️ Local
 

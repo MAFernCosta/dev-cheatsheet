@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider} from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router";
 import './index.css'
 import App from './App.jsx';
 import Linuxbash from './cheatsheets/linuxbash';
@@ -9,18 +9,19 @@ import MdCheatSheet from './mdcheatsheet.jsx';
 
 const router = createBrowserRouter([
   {
-    path:"/",
-    element:<App />,
-    children:[
-      {index: true, element:<Home/>},
-      {path: "linuxbash", element:<Linuxbash />},
-      {path: "mdcheatsheet/:name", element:<MdCheatSheet />},
+    path: "/",
+    element: <App />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "linuxbash", element: <Linuxbash /> },
+      { path: "mdcheatsheet/:name", element: <MdCheatSheet /> },
     ]
   }
-])
+], { basename: "/dev-cheatsheet" }
+)
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-     <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </StrictMode>,
 )
