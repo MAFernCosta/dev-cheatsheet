@@ -13,7 +13,7 @@ function MdCheatSheet() {
 
   try {
     useEffect(() => {
-      fetch(`/cheatsheets/${name}.md`)
+      fetch(`/dev-cheatsheet/cheatsheets/${name}.md`)
         .then((response) => response.text())
         .then((text) => setMarkdownContent(text));
     }, []);
