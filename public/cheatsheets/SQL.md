@@ -34,6 +34,8 @@ ALTER TABLE employee DROP COLUMN nickname;
 
 ## Tabelle beschreiben
 
+Displays Datatype
+
 ```SQL
 DESC student;
 ```
