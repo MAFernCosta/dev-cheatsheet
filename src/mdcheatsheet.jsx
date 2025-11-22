@@ -11,18 +11,21 @@ function MdCheatSheet() {
 
   const [markdownContent, setMarkdownContent] = useState("");
 
-  useEffect(() => {
-    fetch(`/cheatsheets/${name}.md`)
-      .then((response) => response.text())
-      .then((text) => setMarkdownContent(text));
-  }, []);
-
-
+  try {
+    useEffect(() => {
+      fetch(`/cheatsheets/${name}.md`)
+        .then((response) => response.text())
+        .then((text) => setMarkdownContent(text));
+    }, []);
+  }
+  catch (e) {
+    console.log(e);
+  }
   return (
     <>
-    <section className="container markdown">
-      <Markdown remarkPlugins={[remarkGfm]}>{markdownContent}</Markdown>
-    </section>
+      <section className="container markdown">
+        <Markdown remarkPlugins={[remarkGfm]}>{markdownContent}</Markdown>
+      </section>
     </>
   )
 }
