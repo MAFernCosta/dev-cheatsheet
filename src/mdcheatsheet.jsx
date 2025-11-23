@@ -2,7 +2,7 @@ import Markdown from "react-markdown";
 import { useState, useEffect } from "react";
 import remarkGfm from 'remark-gfm'
 import { useParams } from "react-router";
-import "./Markdown.css";
+import "./cheatsheetsStyles/markdown.css";
 
 
 function MdCheatSheet() {
