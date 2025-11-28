@@ -1,70 +1,77 @@
 import { Link, NavLink } from 'react-router';
 import "./sidebar.css";
-import Footer from './footer';
-
-const navbarItems = [
-    {
-        link: "/",
-        name: "Home"
-    },
-    {
-        link: "/linuxbash",
-        name: "Linux bash"
-    },
-    {
-        link: "/mdcheatsheet/SQL",
-        name: "Mdcheatsheet"
-    }
-]
+import { useState, useEffect } from 'react';
 
 function SideBar() {
+
+    const PopulateSubMenu = ({ array }) => {
+
+        if (array.length == 0)
+            return (
+                <li>
+                    <span
+                        class="link-body-emphasis d-inline-flex rounded ms-4"
+                    >empty</span>
+                </li>)
+        return array.map(({ name, path }, index) =>
+            <li key={index + name}>
+                <Link
+                    to={`mdcheatsheet/${btoa(path)}`}
+                    
+                    class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+                >{name}</Link>
+            </li>
+        )
+    }
+
+    const PopulateMenu = () => {
+        const [data, setData] = useState(null);
+
+        useEffect(() => {
+            fetch('/dev-cheatsheet/cheatsheets/file.json')
+                .then(response => response.json())
+                .then(data => setData(data))
+                .catch(error => console.error('Error fetching data:', error));
+        }, []);
+
+        if (!data) {
+            return <div>Loading...</div>;
+        }
+        return (
+            <div>
+                {
+                    data.category.map(({ name, files }, index) =>
+                        <li class="mb-1" key={index + name}>
+                            <button
+                                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target={`#${name}-collapse`}
+                                aria-expanded="false"
+                            >
+                                {name}
+                            </button>
+                            <div class="collapse " id={`${name}-collapse`}>
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    {<PopulateSubMenu array={files} />}
+                                </ul>
+                            </div>
+                        </li>
+                    )}
+            </div>
+        );
+    }
+
     return (
-        <div class="flex-shrink-0 p-3 d-flex flex-column justify-content-between bg-white" style={{ width: "200px" }}>
+        <div className="flex-shrink-0 p-3 d-flex flex-column justify-content-between bg-white" style={{ width: "200px" }}>
             <div className='mt-5'>
                 <ul class="list-unstyled ps-0">
-                    {/*
-                    <li class="mb-1">
-                        <button
-                            class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#home-collapse"
-                            aria-expanded="true"
-                        >
-                            Home
-                        </button>
-                        <div class="collapse show" id="home-collapse">
-                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li>
-                                    <a
-                                        href="#"
-                                        class="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                                    >Overview</a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        class="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                                    >
-                                        Updates
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="#"
-                                        class="link-body-emphasis d-inline-flex text-decoration-none rounded"
-                                    >Reports
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    */}
-                    {navbarItems.map(({link, name}, index)=>
-                    <li key={index} className="mb-1">
-                        <Link className="link-body-emphasis d-inline-flex text-decoration-none rounded" to={link}>{name}</Link>
-                    </li>
-                    )}
-                    
+                    {
+                        <li class="mb-1">
+                            <Link class="link-body-emphasis d-inline-flex text-decoration-none rounded">Home</Link>
+                        </li>
+                    }
+                    {<PopulateMenu />}
+
                 </ul>
             </div>
 

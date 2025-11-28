@@ -14,7 +14,8 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
      // { path: "linuxbash", element: <Linuxbash /> },
-      { path: "mdcheatsheet/:name", element: <MdCheatSheet /> },
+      { path: "mdcheatsheet/:path", element: <MdCheatSheet /> },
+      { path: "mdcheatsheet/sql/:path", element: <MdCheatSheet section={"SQL"}/>}
     ]
   }
 ], { basename: "/dev-cheatsheet" }

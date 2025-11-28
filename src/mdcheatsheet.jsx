@@ -2,29 +2,37 @@ import Markdown from "react-markdown";
 import { useState, useEffect } from "react";
 import remarkGfm from 'remark-gfm'
 import { useParams } from "react-router";
+import { parse } from "html-parser";
 import "./cheatsheetsStyles/markdown.css";
 
 
-function MdCheatSheet() {
-  // Get the Cheatsheet name
-  const { name } = useParams();
+function MdCheatSheet({section}) {
+  // Get the Cheatsheet path
+  const { path } = useParams();
+  
 
   const [markdownContent, setMarkdownContent] = useState("");
 
-  try {
-    useEffect(() => {
-      fetch(`/dev-cheatsheet/cheatsheets/${name}.md`)
-        .then((response) => response.text())
-        .then((text) => setMarkdownContent(text));
-    }, []);
+  const [data, setData] = useState(null);
+  const completePath = `/dev-cheatsheet${atob(path)}`;
+  console.log(completePath, path);
+
+  console.log(`Path: ${section}`);
+  useEffect(() => {
+    fetch(completePath)
+      .then(response => response.text())
+      .then(text => setData(text))
+      .catch(error => console.error('Error fetching data:', error));
+  }, [path]);
+
+  if (!data) {
+    return <div>Loading...</div>;
   }
-  catch (e) {
-    console.log(e);
-  }
+
   return (
     <>
       <section className="container markdown">
-        <Markdown remarkPlugins={[remarkGfm]}>{markdownContent}</Markdown>
+        <Markdown remarkPlugins={[remarkGfm]}>{data}</Markdown>
       </section>
     </>
   )
