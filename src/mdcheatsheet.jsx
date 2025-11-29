@@ -9,12 +9,14 @@ import "./cheatsheetsStyles/markdown.css";
 function MdCheatSheet({section}) {
   // Get the Cheatsheet path
   const { path } = useParams();
+
+  const pathToFetch = "https://maferncosta.github.io/mycheatsheets";
   
 
   const [markdownContent, setMarkdownContent] = useState("");
 
   const [data, setData] = useState(null);
-  const completePath = `/dev-cheatsheet${atob(path)}`;
+  const completePath = `${pathToFetch}${atob(path)}`;
   console.log(completePath, path);
 
   console.log(`Path: ${section}`);

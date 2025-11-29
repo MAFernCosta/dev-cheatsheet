@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 
 function SideBar() {
 
+    const jsonToFetch = "https://maferncosta.github.io/mycheatsheets/file.json";
+
     const PopulateSubMenu = ({ array }) => {
 
         if (array.length == 0)
@@ -28,7 +30,7 @@ function SideBar() {
         const [data, setData] = useState(null);
 
         useEffect(() => {
-            fetch('/dev-cheatsheet/cheatsheets/file.json')
+            fetch(jsonToFetch)
                 .then(response => response.json())
                 .then(data => setData(data))
                 .catch(error => console.error('Error fetching data:', error));
