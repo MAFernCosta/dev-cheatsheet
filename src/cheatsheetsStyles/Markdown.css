@@ -1,11 +1,38 @@
+:root {
+    --background-primary:#212529;
+    --background-secondary:#e9ecf0;
+}
+
 .markdown h1,h2,h3 {
     padding-bottom: 1rem;
+    padding-top: 1rem;
 
 }
 
 .markdown pre{
-    color: #212529;
+    color: var(--background-primary);
     padding: 5px 10px 5px;
-    background-color: #e9ecf0 ;
+    background-color: var(--background-secondary) ;
     border-radius: 5px;
 }
+/* Tables */
+
+.markdown table {
+    border-collapse:separate;
+
+}
+
+.markdown th {
+    padding: 5px;
+    background-color: var(--background-primary) ;
+    color: var(--background-secondary);
+}
+
+.markdown td {
+    padding: 3px 10px;
+}
+
+.markdown tbody tr:nth-child(even) {
+  background-color: var(--background-secondary);
+}
+

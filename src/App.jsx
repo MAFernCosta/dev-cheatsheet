@@ -10,10 +10,10 @@ function App() {
 
   return (
     <>
-      <div className='d-flex justibg-light'>
+      <div className='d-flex bg-light w-100'>
         <Navbar />
         <SideBar />
-        <main className='min-vh-100 pt-4 mt-5'>
+        <main className='min-vh-100 pt-4 mt-5 container'>
           <Outlet />
         </main>
       </div>

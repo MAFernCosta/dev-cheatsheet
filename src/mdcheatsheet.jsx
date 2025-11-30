@@ -33,7 +33,7 @@ function MdCheatSheet({section}) {
 
   return (
     <>
-      <section className="container markdown">
+      <section className="markdown mb-5">
         <Markdown remarkPlugins={[remarkGfm]}>{data}</Markdown>
       </section>
     </>

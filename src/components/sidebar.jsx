@@ -64,7 +64,7 @@ function SideBar() {
     }
 
     return (
-        <div className="flex-shrink-0 p-3 d-flex flex-column justify-content-between bg-white" style={{ width: "200px" }}>
+        <div className="flex-shrink-0 p-3 d-flex flex-column justify-content-between bg-white border-end " style={{ width: "15%" }}>
             <div className='mt-5'>
                 <ul class="list-unstyled ps-0">
                     {
